@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-# interactive-comments-section-main
->>>>>>> fba05769afdfa95e83b55e05bdfec78aabb9d7ac
 # Frontend Mentor - Interactive comments section solution
 
 This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -17,8 +13,6 @@ This is a solution to the [Interactive comments section challenge on Frontend Me
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -55,11 +49,80 @@ Users should be able to:
 
 
 ### What I learned
-DOM Manipulation
+- DOM Manipulation
+- Event delegation
+
+### Proud of this
+ function to display delete warning message
+
+```js
 
 
+const deleteWarning = () => {
+  let warn = `<div class="deletewrapper">
+                    <div class="deletewarningCon">
+                            <div class="deletewarning">
+                                <h4>Delete comment</h4>
+                                <p> Are you sure you want to delete this comment?This will remove the comment and can't be undone.</p>
+                                    <div class="buttonstyle">
+                                        <button class="leavecomment">NO, CANCEL</button> <button class="deletenow">Yes, DELETE</button>
+                                    </div>
+                            </div>
+                   </div>
+             </div>
+        `;
+  return warn;
+};
+```
+function to display comment box when the reply arrow icon or reply text is clicked
+
+```js
+const createComment = () => {
+  let currentUser = `
+            <form  id="addCommentForm" class="replyform">
+                <img class="profile" src="${userProfile}" alt="image">
+                <textarea class="textarea" name="add-comment" id="addCommentBox" placeholder="Add a comment..."></textarea>
+                <div class="add-comment__trigger">
+                    <button type="submit" class="send">SEND</button>
+                </div>
+            </form>
+        `;
+  return currentUser;
+};
+```
+
+
+function to display editbox innerHtml when the edit icon or edit text is clicked
+```js
+const editBoxStructure = (createdAt, content, score) => {
+  let structure = ` <div class="details">
+                    <img src="${userProfile}" alt="image" class="image">
+                    <p class="username">${user}</p>
+                    <p class="you">you</p>
+                    <p class="created">${createdAt}</p>
+             </div>
+
+                 <form id="addCommentForm" class="contents">
+                <textarea class="textarea" name="add-comment" id="addCommentBox" placeholder="Add a comment...">${content}</textarea>
+
+            <div class="score-con">
+                    <img src="images/icon-plus.svg" alt="image" class="plus">
+                    <p class="score">${score}</p>
+                    <img src="images/icon-minus.svg" alt="image" class="minus">
+                </div>
+
+                <div class="add-comment__trigger">
+                    <button type="submit" class="sends">UPDATE</button>
+                </div>
+
+
+        </form>
+`;
+  return structure;
+};
+```
 ## Author
 
 - Ibimina hart
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@ibimina](https://www.frontendmentor.io/profile/yourusername)
 

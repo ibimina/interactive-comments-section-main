@@ -31,8 +31,9 @@ body {
 
 .details {
     display: flex;
-    grid-column: 1/9;
-    gap: .5rem;
+    grid-column: 1/10;
+    gap: .4rem;
+   
 }
 
 
@@ -192,7 +193,7 @@ div.score-container {
 .display{
     display: block;
 }
-.send {
+.send,.page {
     margin-top: 1rem;
     color: hsl(0, 0%, 100%);
     background-color: hsl(238, 40%, 52%);
